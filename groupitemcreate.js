@@ -6,6 +6,7 @@
         var Adminka = document.adminkaInterpro;
         Adminka.init({});
 
+
         var groupitemCreate = function (){
 
             var $this = $(this);
@@ -37,6 +38,7 @@
                             container.append(data.complhtml);
                             messagecontainer.addClass('alert-success');
                             messagecontainer.text('элемент ' + description + ' создан.');
+                            document.pickDateAll(); //Потом переделать на вызов только для добавленного
                         }else{
                             messagecontainer.addClass('alert-warning');
                             messagecontainer.text('элемент ' + description + ' НЕ создан. Статус ошибки: ' + data.status);
@@ -63,11 +65,9 @@
             return this.first();
         };
 
-
-
-
-
         $(document).gicreate('.any_create');
+
+
 
     });
 })(jQuery);

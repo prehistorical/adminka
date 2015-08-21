@@ -128,5 +128,28 @@
         };
     }());
 
+    $(function()
+    {
+        document.pickDateAll();
+    });
+
+    document.pickDateItem = function(){
+        var $this = $(this);
+        var pickerdefdate = $this.data('date');
+        var picker = $this.data('DateTimePicker');
+        picker.date(moment(pickerdefdate));
+    };
+
+    document.pickDateAll = function(){
+        $('.sortdate').datetimepicker({locale: 'ru'});
+        $('.sortdate').each(function(){
+            var $this = $(this);
+            var pickerdefdate = $this.data('date');
+            var picker = $this.data('DateTimePicker');
+            picker.date(moment(pickerdefdate));
+        });
+    };
+
+    document.pickDateAll();
 
 }(jQuery));

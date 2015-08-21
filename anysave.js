@@ -24,6 +24,7 @@
             dataobj['stringfields'] = {};
             dataobj['textfields'] = {};
             dataobj['bools'] = {};
+            dataobj['pdatetimes'] = {};
             dataobj['numbs'] = {};
             dataobj['images'] = {};
 
@@ -45,6 +46,11 @@
 
                     } else if (field_type == 'numb') {
                         obj['numbs'][field_name] = $this.val();
+
+                    } else if (field_type == 'datetime') {
+
+                        //obj['datetimes'][field_name] = $this.val();dddd, MMMM DD YYYY, h:mm:ss
+                        obj['pdatetimes'][field_name] = $this.parent().data('DateTimePicker').date().format('YYYY-DD-MMTHH:mm:ss+06:00');
 
                     } else if (field_type == 'image') {
                         obj['images'][field_name] = {
@@ -154,8 +160,6 @@
 
             return this.first();
         };
-
-
 
         $(document).anysave('.any_save');
 
