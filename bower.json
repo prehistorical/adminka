@@ -1,0 +1,11 @@
+{
+  "name": "prehistorical-adminka",
+  "version": "0.1.0",
+  "description": "prehistorical adminka",
+  "license": "MIT",
+  "dependencies": {    
+    "jquery": "1",
+    "moment": "~2.10.3",    
+    "eonasdan-bootstrap-datetimepicker": "~4.15.35"
+  }
+} 
